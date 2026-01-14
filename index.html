@@ -5,13 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Study Planner & Time management Tool</title>
 
-
-
-
-
-
-
-
 <meta name="description" content="Overwhelmed by homework? Use this free study planner to prioritize tasks with the MIT method. Visualize your schedule, plan breaks, and finish work faster!">
 <script type="application/ld+json">
 {
@@ -89,12 +82,6 @@ html {
 }
 
 
-
-
-
-
-
-
 /* This targets the MIT/Why Use This, FAQ, and Bibliography boxes */
 .mitMethod, 
 .mitMethod > div {
@@ -112,57 +99,7 @@ html {
 /* This targets the MIT/Why Use This, FAQ, and Bibliography boxes */
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 * { box-sizing: border-box; }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 body {
@@ -172,53 +109,8 @@ body {
   /* Updated to a nice, lighter professional blue hue */
  background: linear-gradient(150deg, #016064 0%, #022d36 100%);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   color: var(--text-main);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /* --- The Main Container --- */
@@ -234,37 +126,6 @@ border: 6px solid #e5e7eb;
     0 5px 15px rgba(0, 0, 0, 0.1),
     0 60px 100px rgba(1, 96, 100, 0.2); /* Tinted glow matching your teal */
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* --- Assignment Cards: UPDATED FOR 3-LINE LAYOUT --- */
 .assignment {
@@ -282,72 +143,11 @@ border: 6px solid #e5e7eb;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .assignment:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
   border-color: var(--brand-primary);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /* Label Styling */
@@ -359,36 +159,6 @@ border: 6px solid #e5e7eb;
   letter-spacing: 0.5px;
   margin-bottom: -8px; /* Brings label closer to its dropdown */
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /* Dropdown Styling */
@@ -405,57 +175,11 @@ select {
   appearance: none;           /* remove default OS arrow styling */
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 select:hover {
   border-color: var(--brand-accent);
   background-color: #fff7ed; /* Your Peach Hover */
   box-shadow: 0 0 8px rgba(249, 115, 22, 0.1);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* --- Buttons --- */
 button {
@@ -470,81 +194,33 @@ button {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 button:hover {
   background-color: var(--brand-accent); /* Sunset Orange */
   transform: translateY(-2px);
   box-shadow: 0 6px 15px rgba(249, 115, 22, 0.3);
 }
+#addAssignmentBtn {
+  background-color: #059669;  /* Dark Blue */
+  color: white;
+}
 
+#addAssignmentBtn:hover {
+  background-color: #10B981; /* Bright Blue on hover */
+}
 
+#calculateBtn {
+  background-color: #D97706; /* Emerald Green */
+  color: white;
+}
 
-
-
+#calculateBtn:hover {
+  background-color: #F59E0B; /* Lighter Green on hover */
+}
 
 
 
 #resetBtn { background: #f1f5f9; color: #666; border: 1px solid #ddd; }
 #resetBtn:hover { background: #fee2e2; color: #dc2626; }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /* --- Output & Timeline --- */
@@ -557,37 +233,6 @@ button:hover {
   border-left: 5px solid var(--brand-primary);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #timelineBar {
   height: 38px;
   border-radius: 100px;
@@ -597,69 +242,8 @@ button:hover {
   margin-top: 10px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .dayMarker { position:absolute; height:38px; width:2px; background:black; z-index:2; }
 .dayLabel { position:absolute; top:-20px; font-size:12px; font-weight:bold; transform:translateX(-50%); }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 .mitMethod, .bibliography {
@@ -669,28 +253,6 @@ button:hover {
   margin-top: 30px;
   line-height: 1.6;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /* DELETE ASSIGNMENT BUTTON — clearly destructive */
@@ -704,12 +266,6 @@ button:hover {
   align-self: flex-end;                 /* pushes it away visually */
   cursor: pointer;
 }
-
-
-
-
-
-
 
 
 /* Hover state */
@@ -734,63 +290,62 @@ select {
 }
 
 
+/* --- Timer & Playhead Styling --- */
+#timerControls {
+  display: none; /* Hidden until Calculate is clicked */
+  justify-content: center;
+  gap: 10px;
+  margin: 15px 0;
+}
 
+#timelineBar {
+  position: relative; /* Ensure the playhead can move over it */
+}
 
+#playhead {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background-color: #ef4444; /* Bright Red */
+  box-shadow: 0 0 8px rgba(239, 68, 68, 0.6);
+  z-index: 10;
+  display: none;
+  pointer-events: none;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* --- 2026 DAY-END MODAL --- */
+#dayEndOverlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 20000;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px);
+}
+.day-modal {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+#continueBtn {
+  background: #10b981;
+  color: white;
+  padding: 15px 40px;
+  font-size: 1.2rem;
+  margin-top: 20px;
+}
 
 </style>
 </head>
 <body>
   
 <div class="container">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 <h1>Study Planner & Time Management Tool</h1>
@@ -805,61 +360,19 @@ select {
   <option value="college">College</option>
 </select>
 
-
-
-
-
-
-
-
 <br><br>
-
-
-
-
-
-
-
 
 <button id="addAssignmentBtn" title="You can add multiple assignments at a time!">Add Assignment</button>
 <button id="calculateBtn">Calculate</button>
 <button id="resetBtn">Reset</button>
 
-
-
-
-
-
-
-
 <div id="assignmentsContainer"></div>
 <div id="output"></div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 <!-- VISUAL TIMELINE -->
 <div id="timelineContainer">
   <h3 style="text-align:center;">Visual Study Timeline</h3>
-
-
-
-
-
-
-
 
   <!-- Legend -->
   <div style="display:flex; justify-content:center; gap:15px; font-size:13px; margin-bottom:8px;">
@@ -871,34 +384,35 @@ select {
     <div><span style="display:inline-block;width:6px;height:20px;background:black;"></span> Day Divider</div>
   </div>
 
+<div id="timerControls">
+  <div id="countdownDisplay"
+       style="
+         font-size: 20px;
+         font-weight: 700;
+         color: #1e293b;
+         min-width: 120px;
+         text-align: center;
+       ">
+    00:00:00
+  </div>
 
+  <button id="startTimerBtn" style="background: #10b981;">
+    Start Timer
+  </button>
 
-
-
-
+  <button id="resetTimerBtn" style="background: #64748b;">
+    Reset Timer
+  </button>
+</div>
 
 
   <div id="timelineBar"></div>
+  
   <!-- DISCLAIMER SECTION -->
 <div style="margin-top: 40px; padding: 15px; border-top: 1px solid #ddd; font-size: 12px; color: #666; line-height: 1.4;">
   <p><strong>Disclaimer:</strong> This Study Planner & Time Management Tool is provided for <strong>informational and educational purposes only</strong>. While the calculations are based on established productivity frameworks (like the MIT Method), they are estimates and do not guarantee academic success or specific results.</p>
   <p>By using this tool, you acknowledge that actual study times vary by individual and task complexity. The developer, <strong>Aryan Verma</strong>, shall not be held liable for any missed deadlines, academic penalties, or damages arising from the use of this website. Use this tool at your own risk.</p>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <!-- MIT METHOD TEXT -->
 <div class="mitMethod">
@@ -922,21 +436,6 @@ select {
  
   <p>Start organizing your study schedule today and make every minute count!</p>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 </div>
 <!-- FAQ SECTION -->
@@ -979,21 +478,6 @@ select {
   </div>
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- BIBLIOGRAPHY / REFERENCES -->
 <div class="bibliography">
 <h3 style="margin-top:0; text-align:center;">Bibliography</h3>
@@ -1005,27 +489,7 @@ select {
 </div>
 
 
-
-
-
-
-
-
 </div> <!-- End container -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 <script>
@@ -1033,42 +497,15 @@ const container = document.getElementById("assignmentsContainer");
 const output = document.getElementById("output");
 const schoolLevel = document.getElementById("schoolLevel");
 
-
-
-
-
-
-
-
 const subjects = {
   middle:["Math","English","Science","Social Studies","PE/Health","Art/Music","Foreign Language"],
   high:["Math","English","Science","Social Studies","PE/Health","Art/Music","Foreign Language","Electives/Other"],
   college:["Arts & Humanities","STEM","Science","Computer Science","Astronomy","Environmental Science","Engineering","Business/Finance","Social Sciences","Health & Medicine","Education","Communication & Media","Other"]
 };
 
-
-
-
-
-
-
-
 const attentionBlocks = { middle:60, high:78, college:90 };
 const difficultyRank = { priority:0, hard:1, medium:2, easy:3 }; // PRIORITY first
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+let TOTAL_STUDY_SECONDS = 0;
 
 
 function minutesToText(mins){
@@ -1078,21 +515,6 @@ function minutesToText(mins){
   if(m===0) return `${h} hours`;
   return `${h} hours ${m} minutes`;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // Add Assignment
 document.getElementById("addAssignmentBtn").onclick = () => {
@@ -1123,21 +545,6 @@ document.getElementById("addAssignmentBtn").onclick = () => {
   div.scrollIntoView({ behavior: 'smooth', block: 'center' });
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Reset
 document.getElementById("resetBtn").onclick = () => {
   container.innerHTML = "";
@@ -1146,20 +553,6 @@ document.getElementById("resetBtn").onclick = () => {
   const oldDaysText = document.getElementById("daysText");
   if(oldDaysText) oldDaysText.remove();
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // Calculate
@@ -1171,40 +564,11 @@ document.getElementById("calculateBtn").onclick = () => {
   }
 
 
-
-
-
-
-
-
   let assignments = raw.map(a => ({
     subject: a.querySelector(".subject").value,
     minutes: parseInt(a.querySelector(".time").value),
     difficulty: a.querySelector(".difficulty").value
   }));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   assignments.sort((a,b)=>{
     if(difficultyRank[a.difficulty] !== difficultyRank[b.difficulty]){
@@ -1214,37 +578,8 @@ document.getElementById("calculateBtn").onclick = () => {
   });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   const block = attentionBlocks[schoolLevel.value];
   let dailyLimit = schoolLevel.value==="middle"?120: schoolLevel.value==="high"?180:240;
-
-
-
-
-
-
-
 
   let totalWork = assignments.reduce((s,a)=>s+a.minutes,0);
   let totalBreaks = 0;
@@ -1255,12 +590,6 @@ document.getElementById("calculateBtn").onclick = () => {
   let plan = `<b>Day ${day}:</b>\n\n`;
 
 
-
-
-
-
-
-
   assignments.forEach((a,idx)=>{
     let remaining = a.minutes;
     while(remaining>0){
@@ -1268,30 +597,10 @@ document.getElementById("calculateBtn").onclick = () => {
       let chunk = Math.min(remaining, untilBreak, dailyLimit - dayCumulative);
 
 
-
-
-
-
-
-
       plan += `${a.subject} (${a.difficulty}) — ${minutesToText(chunk)}`;
       dayCumulative += chunk;
       cumulativeForTimeline += chunk;
       remaining -= chunk;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
       if(dayCumulative % block === 0 && dayCumulative + 15 <= dailyLimit && (remaining>0 || idx<assignments.length-1)){
@@ -1302,27 +611,7 @@ document.getElementById("calculateBtn").onclick = () => {
       }
 
 
-
-
-
-
-
-
       if(remaining>0) plan += ", then ";
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
       if(dayCumulative >= dailyLimit && (remaining>0 || idx<assignments.length-1)){
@@ -1334,21 +623,10 @@ document.getElementById("calculateBtn").onclick = () => {
     }
     plan += "\n\n";
   });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  
+TOTAL_STUDY_SECONDS = (totalWork + totalBreaks) * 60;
+document.getElementById("countdownDisplay").textContent =
+  "DEBUG: " + TOTAL_STUDY_SECONDS + " sec";
 
   output.innerHTML =
 `Total Work Time: ${minutesToText(totalWork)}
@@ -1356,36 +634,7 @@ Total Break Time: ${minutesToText(totalBreaks)}
 Total Time Required: ${minutesToText(totalWork + totalBreaks)}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ${plan}`;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   const daysNeeded = Math.ceil(totalWork/dailyLimit);
   const daysText = document.createElement("div");
@@ -1396,126 +645,23 @@ ${plan}`;
   daysText.textContent = `You can finish your work in ${daysNeeded} school day${daysNeeded>1?"s":""}.`;
   daysText.id = "daysText";
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   const oldDaysText = document.getElementById("daysText");
   if(oldDaysText) oldDaysText.remove();
   const timelineContainer = document.getElementById("timelineContainer");
   timelineContainer.parentNode.insertBefore(daysText, timelineContainer);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   renderTimeline(assignments, block, dayBoundaries, cumulativeForTimeline, dailyLimit);
 // ... (existing calculation code above)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   renderTimeline(assignments, block, dayBoundaries, cumulativeForTimeline, dailyLimit);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
   // ADD THIS LINE BELOW:
   output.scrollIntoView({ behavior: 'smooth', block: 'start' });
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // Timeline with day markers and breaks (fixed break placement)
 function renderTimeline(assignments, block, dayBoundaries, totalTime, dailyLimit){
@@ -1525,39 +671,11 @@ function renderTimeline(assignments, block, dayBoundaries, totalTime, dailyLimit
   const colors = { priority:"#800080", hard:"#d9534f", medium:"#f0ad4e", easy:"#5cb85c", break:"#999" };
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   assignments.forEach((a,idx)=>{
     let remaining = a.minutes;
     while(remaining>0){
       let untilBreak = block - (dayCumulative % block);
       let chunk = Math.min(remaining, untilBreak, dailyLimit - dayCumulative);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
       const seg = document.createElement("div");
@@ -1566,37 +684,8 @@ function renderTimeline(assignments, block, dayBoundaries, totalTime, dailyLimit
       bar.appendChild(seg);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       dayCumulative += chunk;
       remaining -= chunk;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
       if(dayCumulative % block === 0 && dayCumulative + 15 <= dailyLimit && (remaining>0 || idx<assignments.length-1)){
         const breakSeg = document.createElement("div");
@@ -1605,20 +694,6 @@ function renderTimeline(assignments, block, dayBoundaries, totalTime, dailyLimit
         bar.appendChild(breakSeg);
         dayCumulative += 15;
       }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
       if(dayCumulative >= dailyLimit){
@@ -1633,21 +708,6 @@ function renderTimeline(assignments, block, dayBoundaries, totalTime, dailyLimit
     marker.style.left = `${(db/totalTime)*100}%`;
     bar.appendChild(marker);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     const label = document.createElement("div");
     label.className = "dayLabel";
     label.style.left = `${(db/totalTime)*100}%`;
@@ -1657,62 +717,275 @@ function renderTimeline(assignments, block, dayBoundaries, totalTime, dailyLimit
 }
 
 
+/* --- ROBUST 2026 TIMER ENGINE --- */
+(function() {
+    const bar = document.getElementById("timelineBar");
+    if (!bar) return;
+
+    // 1. Force the timeline bar to be the "anchor" for the vertical line
+    bar.style.position = "relative";
+
+    // 2. Create the Red Vertical Bar (Playhead)
+    let playhead = document.getElementById("v_playhead");
+    if (!playhead) {
+        playhead = document.createElement("div");
+        playhead.id = "v_playhead";
+        // This styling ensures it cuts vertically through the entire timeline bar
+        playhead.style.cssText = `
+            position: absolute; top: 0; left: 0; width: 4px; height: 100%; 
+            background: #ef4444; z-index: 999; display: none; 
+            pointer-events: none; box-shadow: 0 0 10px rgba(239, 68, 68, 0.8);
+        `;
+        bar.appendChild(playhead);
+    }
+
+    // 3. Ensure Timer Controls Container exists
+    let controls = document.getElementById("timerControls");
+    if (!controls) {
+        controls = document.createElement("div");
+        controls.id = "timerControls";
+        controls.style.cssText = "display:none; justify-content:center; gap:12px; margin:20px 0;";
+        controls.innerHTML = `
+            <button id="startTimerBtn" style="background:#10b981; color:white; padding:10px 25px; border-radius:8px; cursor:pointer;">Start Timer</button>
+            <button id="resetTimerBtn" style="background:#64748b; color:white; padding:10px 25px; border-radius:8px; cursor:pointer;">Reset Timer</button>
+        `;
+        document.getElementById("timelineContainer").insertBefore(controls, bar);
+    }
+
+    let timerRaf;
+    let startTime;
+
+    const stopAndClear = () => {
+        cancelAnimationFrame(timerRaf);
+        timerRaf = null;
+        playhead.style.display = "none";
+        playhead.style.left = "0%";
+        document.getElementById("countdownDisplay").textContent = "00:00:00";
+    };
+
+    // 4. Hook into the existing Calculate button to show the timer
+    const calcBtn = document.getElementById("calculateBtn");
+    const originalCalc = calcBtn.onclick;
+    calcBtn.onclick = function(e) {
+        if (originalCalc) originalCalc.apply(this, arguments);
+        document.getElementById("timerControls").style.display = "flex";
+        stopAndClear();
+    };
+
+    document.getElementById("resetTimerBtn").onclick = stopAndClear;
+
+document.getElementById("startTimerBtn").onclick = function () {
+  if (TOTAL_STUDY_SECONDS <= 0) {
+    alert("Please click Calculate first.");
+    return;
+  }
+
+  stopAndClear();
+
+  const countdown = document.getElementById("countdownDisplay");
+  playhead.style.display = "block";
+
+  const startTime = performance.now();
+
+  function frame(now) {
+    const elapsed = Math.floor((now - startTime) / 1000);
+    const remaining = Math.max(0, TOTAL_STUDY_SECONDS - elapsed);
+
+    const h = Math.floor(remaining / 3600);
+    const m = Math.floor((remaining % 3600) / 60);
+    const s = remaining % 60;
+
+    countdown.textContent =
+      `${h.toString().padStart(2, "0")}:` +
+      `${m.toString().padStart(2, "0")}:` +
+      `${s.toString().padStart(2, "0")}`;
+
+    const progress = (elapsed / TOTAL_STUDY_SECONDS) * 100;
+    playhead.style.left = Math.min(progress, 100) + "%";
+
+    if (remaining > 0) {
+      timerRaf = requestAnimationFrame(frame);
+    } else {
+      playhead.style.left = "100%";
+      alert("Study Session Complete!");
+    }
+  }
+
+  timerRaf = requestAnimationFrame(frame);
+};
 
 
+})();
+
+/* --- 2026 KEYBOARD-ENABLED TIMER ENGINE --- */
+(function() {
+    const bar = document.getElementById("timelineBar");
+    const output = document.getElementById("output");
+    if (!bar || !output) return;
+
+    // 1. Setup global state
+    let timerId = null;
+    let startTime = 0;
+    let playhead = null;
+
+    // 2. The Re-Injection Logic (Ensures bar exists even after Calculate clears it)
+    const ensurePlayhead = () => {
+        if (document.getElementById("v_playhead_fixed")) {
+            playhead = document.getElementById("v_playhead_fixed");
+        } else {
+            playhead = document.createElement("div");
+            playhead.id = "v_playhead_fixed";
+            playhead.style.cssText = `
+                position: absolute !important; top: -5px !important; left: 0; 
+                width: 4px; height: calc(100% + 10px); background: #ef4444; 
+                z-index: 9999; display: none; pointer-events: none; 
+                box-shadow: 0 0 10px rgba(239, 68, 68, 0.8);
+            `;
+            bar.style.position = "relative";
+            bar.appendChild(playhead);
+        }
+    };
+
+const stopTimer = () => {
+    cancelAnimationFrame(timerId);
+    timerId = null;
+    if (playhead) {
+        playhead.style.display = "none";
+        playhead.style.left = "0%";
+    }
+    // Reset countdown display
+    const countdown = document.getElementById("countdownDisplay");
+    if (countdown) countdown.textContent = "00:00:00";
+};
+
+const startTimer = () => {
+    if (TOTAL_STUDY_SECONDS <= 0) {
+        alert("Please click Calculate first.");
+        return;
+    }
+
+    stopTimer();       // stops any previous timer
+    ensurePlayhead();  // make sure playhead exists
+    playhead.style.display = "block";
+
+    const startTime = performance.now();
+    const countdown = document.getElementById("countdownDisplay");
+
+    function frame(now) {
+        const elapsed = Math.floor((now - startTime) / 1000);
+        const remaining = Math.max(0, TOTAL_STUDY_SECONDS - elapsed);
+
+        // Update the HH:MM:SS display
+        const h = Math.floor(remaining / 3600);
+        const m = Math.floor((remaining % 3600) / 60);
+        const s = remaining % 60;
+        countdown.textContent =
+            `${h.toString().padStart(2,"0")}:` +
+            `${m.toString().padStart(2,"0")}:` +
+            `${s.toString().padStart(2,"0")}`;
+
+        // Move playhead
+        const progress = (elapsed / TOTAL_STUDY_SECONDS) * 100;
+        playhead.style.left = Math.min(progress, 100) + "%";
+
+        if (remaining > 0) {
+            timerId = requestAnimationFrame(frame);
+        } else {
+            playhead.style.left = "100%";
+            alert("Study Session Complete!");
+        }
+    }
+
+    timerId = requestAnimationFrame(frame);
+};
+
+    // 3. Add Keyboard Listeners (Spacebar to Start, 'R' to Reset)
+    window.addEventListener("keydown", (e) => {
+        if (e.code === "Space") {
+            e.preventDefault(); // Stop page from scrolling
+            startTimer();
+        }
+        if (e.key.toLowerCase() === "r") {
+            stopTimer();
+        }
+    });
+
+    // 4. Manual Button Listeners
+    const startBtn = document.getElementById("startTimerBtn");
+    const resetBtn = document.getElementById("resetTimerBtn");
+    if (startBtn) startBtn.onclick = startTimer;
+    if (resetBtn) resetBtn.onclick = stopTimer;
+
+    // 5. Reset timer whenever "Calculate" is clicked
 
 
+})();
 
+/* --- DAY-END PAUSE LOGIC --- */
+(function() {
+  // 1. Create the UI
+  const overlay = document.createElement("div");
+  overlay.id = "dayEndOverlay";
+  overlay.innerHTML = `<div class="day-modal">
+    <h2 id="dayEndTitle" style="margin-top:0;">Day Complete!</h2>
+    <p>Your scheduled study time for today is over.</p>
+    <button id="continueBtn">Start Next Day</button>
+  </div>`;
+  document.body.appendChild(overlay);
 
+  let isPausedForDay = false;
+  const continueBtn = document.getElementById("continueBtn");
 
+  // 2. Monitor progress for Day Markers
+  const originalStart = document.getElementById("startTimerBtn").onclick;
+  
+  const checkDayEnd = () => {
+    const playhead = document.getElementById("v_playhead_fixed") || document.getElementById("timerPlayhead_v2");
+    if (!playhead || playhead.style.display === "none" || isPausedForDay) return;
 
+    const playheadRect = playhead.getBoundingClientRect();
+    
+    // Detect Day Marker (the black vertical lines)
+    const marker = document.elementsFromPoint(playheadRect.left, playheadRect.top)
+      .find(el => el.className === "dayMarker");
 
+    if (marker && !marker.dataset.passed) {
+      isPausedForDay = true;
+      marker.dataset.passed = "true"; // Prevent double-triggering
+      
+      // Stop the timer
+      const resetBtn = document.getElementById("resetTimerBtn");
+      const startBtn = document.getElementById("startTimerBtn");
+      
+      // Pause visual playhead by stopping the animation frame
+      // We trigger the continue button to resume
+      overlay.style.display = "flex";
+    }
+  };
 
+  continueBtn.onclick = () => {
+    overlay.style.display = "none";
+    isPausedForDay = false;
+    // The playhead will resume naturally in the next animation frame 
+    // because the 'step' function in your timer logic checks current time
+  };
 
-
+  // Run the check inside the global animation loop
+  const monitorLoop = () => {
+    if (!isPausedForDay) checkDayEnd();
+    requestAnimationFrame(monitorLoop);
+  };
+  monitorLoop();
+})();
 
 
 </script>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 </body>
+
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
