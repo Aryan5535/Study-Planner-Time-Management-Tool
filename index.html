@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Study Planner & Time management Tool</title>
 
+
+
+
 <meta name="description" content="Overwhelmed by homework? Use this free study planner to prioritize tasks with the MIT method. Visualize your schedule, plan breaks, and finish work faster!">
 <script type="application/ld+json">
 {
@@ -27,11 +30,64 @@
 }
 </script>
 <style>
+
+
+
+
+/* Restores original colors to the timeline and every single segment inside it */
+.dark-theme #timelineBar,
+.dark-theme #timelineBar > div {
+    filter: invert(1) hue-rotate(180deg) !important;
+}
+
+
+
+
+/* Also fix the markers and labels if they still look off */
+.dark-theme .dayLabel,
+.dark-theme .dayMarker {
+    filter: invert(1) hue-rotate(180deg) !important;
+}
+
+
+
+
+/* Restores original colors to the timeline and its specific parts */
+.dark-theme #timelineContainer,
+.dark-theme #timelineBar,
+.dark-theme .dayLabel,
+.dark-theme .dayMarker {
+    filter: invert(1) hue-rotate(180deg);
+}
+
+
+
+
+/* If you have a legend or keys outside the timeline, add their IDs or classes here */
+.dark-theme .timeline-key {
+    filter: invert(1) hue-rotate(180deg);
+}
+
+
+
+
+/* This flips the whole page */
+.dark-theme { filter: invert(1) hue-rotate(180deg); background: white; }
+
+
+
+
+/* THIS LINE keeps your buttons original: it flips the buttons back! */
+.dark-theme #btnLight, .dark-theme #btnDark { filter: invert(1) hue-rotate(180deg); }
+
+
+
+
 /* ===== 2026 VIBRANT DASHBOARD - REFINED LAYOUT & HUE ===== */
   /* --- 2026 High-Contrast Typography (Inside Container) --- */
 h1 {
   /* A Deep, Professional Navy Blue */
-  color: #1e3a8a !important; 
+  color: #1e3a8a !important;
   font-size: 2.8rem !important;
   font-weight: 800 !important;
   text-align: center !important;
@@ -43,9 +99,21 @@ h1 {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 h2 {
   /* A Rich Dark Slate Gray */
-  color: #475569 !important; 
+  color: #475569 !important;
   font-size: 1.2rem !important;
   font-weight: 500 !important;
   text-align: center !important;
@@ -57,10 +125,22 @@ h2 {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 /* Aryan Verma Credit Tag */
 p[style*="italic"], .container > p {
   /* Matches the Dark Gray of the subtitle */
-  color: #64748b !important; 
+  color: #64748b !important;
   font-weight: 600 !important;
   font-size: 0.9rem !important;
   letter-spacing: 1px !important;
@@ -71,23 +151,47 @@ p[style*="italic"], .container > p {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 html {
   scroll-behavior: smooth;
 }
 :root {
-  --brand-primary: #4f46e5; 
+  --brand-primary: #4f46e5;
   --brand-accent: #f97316;  /* Sunset Orange */
   --text-main: #1e293b;
   --border-light: #e2e8f0;
 }
 
 
+
+
+
+
+
+
 /* This targets the MIT/Why Use This, FAQ, and Bibliography boxes */
-.mitMethod, 
+.mitMethod,
 .mitMethod > div {
     background-color: #E2E8F0 !important; /* Change this hex code to your preferred color */
     border: 1px solid #ABB0B8 !important;  /* Optional: gives it a matching border */
 }
+
+
+
+
+
+
 
 
 /* This targets the MIT/Why Use This, FAQ, and Bibliography boxes */
@@ -99,7 +203,19 @@ html {
 /* This targets the MIT/Why Use This, FAQ, and Bibliography boxes */
 
 
+
+
+
+
+
+
 * { box-sizing: border-box; }
+
+
+
+
+
+
 
 
 body {
@@ -109,8 +225,17 @@ body {
   /* Updated to a nice, lighter professional blue hue */
  background: linear-gradient(150deg, #016064 0%, #022d36 100%);
 
+
+
+
   color: var(--text-main);
 }
+
+
+
+
+
+
 
 
 /* --- The Main Container --- */
@@ -121,33 +246,45 @@ body {
 border: 6px solid #e5e7eb;
   padding: 35px;
   border-radius: 24px;
-   box-shadow: 
+   box-shadow:
     0 20px 50px rgba(0, 0, 0, 0.3),
     0 5px 15px rgba(0, 0, 0, 0.1),
     0 60px 100px rgba(1, 96, 100, 0.2); /* Tinted glow matching your teal */
 }
 
+
+
+
 /* --- Assignment Cards: UPDATED FOR 3-LINE LAYOUT --- */
 .assignment {
-  background: rgba(226, 232, 240, 1); 
+  background: rgba(226, 232, 240, 1);
   border: 1px solid rgba(226, 232, 240, 0.8);
   border-radius: 16px;
   padding: 20px;
   margin-top: 15px;
-  
+ 
   /* Changed to Grid for 3 distinct lines */
   display: grid;
-  grid-template-columns: 1fr; 
+  grid-template-columns: 1fr;
   gap: 12px;
-  
+ 
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
+
+
 
 .assignment:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
   border-color: var(--brand-primary);
 }
+
+
+
+
+
+
 
 
 /* Label Styling */
@@ -159,6 +296,12 @@ border: 6px solid #e5e7eb;
   letter-spacing: 0.5px;
   margin-bottom: -8px; /* Brings label closer to its dropdown */
 }
+
+
+
+
+
+
 
 
 /* Dropdown Styling */
@@ -175,11 +318,17 @@ select {
   appearance: none;           /* remove default OS arrow styling */
 }
 
+
+
+
 select:hover {
   border-color: var(--brand-accent);
   background-color: #fff7ed; /* Your Peach Hover */
   box-shadow: 0 0 8px rgba(249, 115, 22, 0.1);
 }
+
+
+
 
 /* --- Buttons --- */
 button {
@@ -194,33 +343,63 @@ button {
 }
 
 
+
+
+
+
+
+
 button:hover {
   background-color: var(--brand-accent); /* Sunset Orange */
   transform: translateY(-2px);
   box-shadow: 0 6px 15px rgba(249, 115, 22, 0.3);
 }
 #addAssignmentBtn {
-  background-color: #059669;  /* Dark Blue */
+  background-color: #00BF25;  /* Dark Blue */
   color: white;
 }
+
+
+
 
 #addAssignmentBtn:hover {
-  background-color: #10B981; /* Bright Blue on hover */
+  background-color: #009A1E; /* Bright Blue on hover */
 }
 
+
+
+
 #calculateBtn {
-  background-color: #D97706; /* Emerald Green */
+  background-color: #FF4900; /* Emerald Green */
   color: white;
 }
 
+
+
+
 #calculateBtn:hover {
-  background-color: #F59E0B; /* Lighter Green on hover */
+  background-color: #CB3A00; /* Lighter Green on hover */
 }
+
+
+
+
+
+
+
+
+
 
 
 
 #resetBtn { background: #f1f5f9; color: #666; border: 1px solid #ddd; }
 #resetBtn:hover { background: #fee2e2; color: #dc2626; }
+
+
+
+
+
+
 
 
 /* --- Output & Timeline --- */
@@ -233,6 +412,9 @@ button:hover {
   border-left: 5px solid var(--brand-primary);
 }
 
+
+
+
 #timelineBar {
   height: 38px;
   border-radius: 100px;
@@ -242,8 +424,17 @@ button:hover {
   margin-top: 10px;
 }
 
+
+
+
 .dayMarker { position:absolute; height:38px; width:2px; background:black; z-index:2; }
 .dayLabel { position:absolute; top:-20px; font-size:12px; font-weight:bold; transform:translateX(-50%); }
+
+
+
+
+
+
 
 
 .mitMethod, .bibliography {
@@ -253,6 +444,12 @@ button:hover {
   margin-top: 30px;
   line-height: 1.6;
 }
+
+
+
+
+
+
 
 
 /* DELETE ASSIGNMENT BUTTON — clearly destructive */
@@ -268,6 +465,12 @@ button:hover {
 }
 
 
+
+
+
+
+
+
 /* Hover state */
 .removeBtn:hover {
   background: #fee2e2 !important;
@@ -276,7 +479,7 @@ button:hover {
   transform: none;
 }
 select {
-  background-image: 
+  background-image:
     linear-gradient(45deg, transparent 50%, #4f46e5 50%),
     linear-gradient(135deg, #4f46e5 50%, transparent 50%);
   background-position:
@@ -290,6 +493,12 @@ select {
 }
 
 
+
+
+
+
+
+
 /* --- Timer & Playhead Styling --- */
 #timerControls {
   display: none; /* Hidden until Calculate is clicked */
@@ -298,9 +507,15 @@ select {
   margin: 15px 0;
 }
 
+
+
+
 #timelineBar {
   position: relative; /* Ensure the playhead can move over it */
 }
+
+
+
 
 #playhead {
   position: absolute;
@@ -314,6 +529,9 @@ select {
   display: none;
   pointer-events: none;
 }
+
+
+
 
 /* --- 2026 DAY-END MODAL --- */
 #dayEndOverlay {
@@ -340,17 +558,205 @@ select {
   font-size: 1.2rem;
   margin-top: 20px;
 }
+.dark-theme { filter: invert(1) hue-rotate(180deg); background: white; }
+/* Fix MIT box color in dark mode */
+.dark-theme .mitMethod {
+  background-color: #E2E8F0 !important;
+  border: 1px solid #ABB0B8 !important;
+  filter: invert(1) hue-rotate(180deg); /* re-invert only this box */
+}
+
+
+/* --- 2026 Preset Sections Layout --- */
+#preset-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.preset-col {
+  flex: 1;
+  min-width: 280px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.preset-col h3 {
+  color: #1e3a8a;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #f1f5f9;
+  padding-bottom: 10px;
+}
+
+.preset-btn {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  background-color: #f8fafc;
+  color: #475569;
+  border: 1px solid #cbd5e1;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.preset-btn:hover {
+  background-color: #eef2ff;
+  border-color: #4f46e5;
+  color: #4f46e5;
+}
+
+/* --- 2026 GLOBAL PRESET STYLES --- */
+#preset-section {
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  margin: 40px 0;
+  width: 100%;
+}
+
+.preset-col {
+  flex: 1;
+  min-width: 250px;
+  background: #ffffff !important;
+  padding: 25px;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.preset-col h3 {
+  color: #1e3a8a !important;
+  font-size: 1.2rem !important;
+  margin-bottom: 20px !important;
+  border-bottom: 2px solid #f1f5f9;
+  padding-bottom: 12px;
+}
+
+.preset-btn {
+  display: block;
+  width: 100%;
+  margin-bottom: 12px;
+  background-color: #4f46e5 !important;
+  color: white !important;
+  border: none !important;
+  padding: 12px;
+  font-size: 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.preset-btn:hover {
+  background-color: #f97316 !important;
+  transform: translateY(-2px);
+}
+/* --- Base Scroll Logic (Repeats on Scroll) --- */
+.scroll-animate {
+  animation-timeline: view();
+  animation-range: entry 5% cover 30%;
+  animation-fill-mode: both;
+  will-change: transform, opacity;
+}
+
+/* --- Clean Floating Rise (For MIT & FAQ - Protects Dark Mode) --- */
+@keyframes floatingRiseClean {
+  20% { transform: translateY(40px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* --- Floating Rise with Blur (For Headers Only) --- */
+@keyframes floatingRiseBlur {
+  50% { transform: translateY(40px); opacity: 0; filter: blur(8px); }
+  100% { transform: translateY(0); opacity: 1; filter: blur(0); }
+}
+
+.float-rise-clean { animation-name: floatingRiseClean; }
+.float-rise-blur { animation-name: floatingRiseBlur; }
+
+/* --- Side Reveals --- */
+@keyframes appearLeft {
+  0% { transform: translateX(-60px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+@keyframes appearRight {
+  0% { transform: translateX(60px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+.app-left { animation-name: appearLeft; }
+.app-right { animation-name: appearRight; }
+
+/* --- Specific MIT Box Dark Mode Fix --- */
+.dark-theme .mitMethod.scroll-animate {
+    filter: invert(1) hue-rotate(180deg) !important;
+    /* Prevents animation from clearing the dark mode correction */
+}
+/* --- Additional Column Keyframes --- */
+
+/* High School: Rise from bottom */
+@keyframes appearUp {
+  50% { transform: translateY(60px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+.app-up { animation-name: appearUp; }
+
+/* Dark Mode fix specifically for preset boxes if they use custom colors */
+.dark-theme .preset-col.scroll-animate {
+    isolation: isolate;
+}
 
 </style>
 </head>
 <body>
-  
+ 
+  <div style="text-align: center; margin: 20px 0;">
+    <button id="btnLight" style="padding: 10px 20px; cursor: pointer; background: white; color: black; border: 1px solid black; border-radius: 4px; margin: 5px;">Light mode</button>
+    <button id="btnDark" style="padding: 10px 20px; cursor: pointer; background: black; color: white; border: 1px solid white; border-radius: 4px; margin: 5px;">Dark mode</button>
+</div>
+
+
+
+
 <div class="container">
+
+
+
+
+
+
 
 
 <h1>Study Planner & Time Management Tool</h1>
 <h2>Plan your study sessions efficiently and see how your workload fits into your schedule!</h2>
+<div style="display: flex; justify-content: center; width: 100%; margin: 20px 0;">
+  <button onclick="scrollToPresets()" style="background: #008000; color: white; border: none; padding: 12px 24px; border-radius: 30px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.2s;">
+    ✨ View Preset Study Plans ✨
+  </button>
+</div>
+
+
+
+
 <p style="text-align: center; font-family: 'Bangers', cursive; font-size: 1.8rem; color: #f97316; letter-spacing: 1px; text-transform: none !important;">By Aryan Verma</p>
+
+
+
+
+
+
+
+
+
+
 
 
 <label>School Level:</label>
@@ -360,19 +766,37 @@ select {
   <option value="college">College</option>
 </select>
 
+
+
+
 <br><br>
+
+
+
 
 <button id="addAssignmentBtn" title="You can add multiple assignments at a time!">Add Assignment</button>
 <button id="calculateBtn">Calculate</button>
 <button id="resetBtn">Reset</button>
 
+
+
+
 <div id="assignmentsContainer"></div>
 <div id="output"></div>
+
+
+
+
+
+
 
 
 <!-- VISUAL TIMELINE -->
 <div id="timelineContainer">
   <h3 style="text-align:center;">Visual Study Timeline</h3>
+
+
+
 
   <!-- Legend -->
   <div style="display:flex; justify-content:center; gap:15px; font-size:13px; margin-bottom:8px;">
@@ -383,6 +807,9 @@ select {
     <div><span style="display:inline-block;width:16px;height:16px;background:#999;"></span> Break</div>
     <div><span style="display:inline-block;width:6px;height:20px;background:black;"></span> Day Divider</div>
   </div>
+
+
+
 
 <div id="timerControls">
   <div id="countdownDisplay"
@@ -396,9 +823,15 @@ select {
     00:00:00
   </div>
 
+
+
+
   <button id="startTimerBtn" style="background: #10b981;">
     Start Timer
   </button>
+
+
+
 
   <button id="resetTimerBtn" style="background: #64748b;">
     Reset Timer
@@ -406,23 +839,38 @@ select {
 </div>
 
 
+
+
+
+
+
+
   <div id="timelineBar"></div>
-  
+ 
   <!-- DISCLAIMER SECTION -->
 <div style="margin-top: 40px; padding: 15px; border-top: 1px solid #ddd; font-size: 12px; color: #666; line-height: 1.4;">
   <p><strong>Disclaimer:</strong> This Study Planner & Time Management Tool is provided for <strong>informational and educational purposes only</strong>. While the calculations are based on established productivity frameworks (like the MIT Method), they are estimates and do not guarantee academic success or specific results.</p>
   <p>By using this tool, you acknowledge that actual study times vary by individual and task complexity. The developer, <strong>Aryan Verma</strong>, shall not be held liable for any missed deadlines, academic penalties, or damages arising from the use of this website. Use this tool at your own risk.</p>
 </div>
 
+
+
+
 <!-- MIT METHOD TEXT -->
 <div class="mitMethod">
 <!-- SEO-Friendly Content for Google -->
 
 
+
+
+
+
+
+
   <h2 style="text-align:center; color:#2a3eb1;">Why Use This Study Planner?</h2>
   <p>This Study Planner & Time Management Tool is designed to help students of all levels—middle school, high school, and college—organize their homework, assignments, and study sessions efficiently. By visualizing tasks, estimated completion times, and breaks, students can manage their workload without feeling overwhelmed.</p>
  
-  <p>The tool uses the <strong>Most Important Task (MIT) Method</strong> to prioritize the most challenging assignments first, helping students make the most of their attention span. It also incorporates strategic 15-minute breaks, proven to improve memory retention and reduce cognitive fatigue, allowing students to study smarter, not longer.</p>
+  <p>The tool uses the <strong>Most Important Task (MIT) Method</strong> to prioritize the most challenging assignments first, helping students make the most of their attention span. It also incorporates strategic 10-minute breaks, proven to improve memory retention and reduce cognitive fatigue, allowing students to study smarter, not longer.</p>
  
   <p>With this planner, students can:</p>
   <ul>
@@ -437,39 +885,42 @@ select {
   <p>Start organizing your study schedule today and make every minute count!</p>
 </div>
 
+
+
+
 </div>
 <!-- FAQ SECTION -->
 <div class="faq" style="margin-top:40px; padding:25px; background:#f5f7ff; border-radius:16px; border:1px solid #e2e8f0;">
   <h2 style="text-align:center; color:#2a3eb1; margin-bottom:20px;">Frequently Asked Questions</h2>
-  
+ 
   <div style="margin-bottom:20px;">
     <h3 style="color:#4f46e5; font-size:16px; margin-bottom:5px;">1. Is this study planner free?</h3>
     <p style="font-size:14px; color:#1e293b; line-height:1.6;">
       Yes! This Study Planner is 100% free for students at all levels—middle school, high school, and college. You can organize your assignments, visualize your schedule, and track your workload without paying a dime. No login required either!
     </p>
   </div>
-  
+ 
   <div style="margin-bottom:20px;">
     <h3 style="color:#4f46e5; font-size:16px; margin-bottom:5px;">2. Can using this tool actually help me improve my grades?</h3>
     <p style="font-size:14px; color:#1e293b; line-height:1.6;">
       This planner helps you stay organized and manage your study time more effectively. By prioritizing important tasks, planning breaks strategically, and visualizing your workload, it can reduce stress and make it easier to complete assignments efficiently, which supports better learning habits, although there is no guarantee for specific grades.
     </p>
   </div>
-  
+ 
   <div style="margin-bottom:20px;">
     <h3 style="color:#4f46e5; font-size:16px; margin-bottom:5px;">3. Will this planner work even if I have extracurricular activities or a busy schedule?</h3>
     <p style="font-size:14px; color:#1e293b; line-height:1.6;">
       Yes! The planner is flexible and designed to fit your real-life schedule. You can add as many assignments as needed, adjust study times, and still plan around sports, clubs, or other activities, making it easier to balance academics and life outside school.
     </p>
   </div>
-  
+ 
   <div style="margin-bottom:20px;">
     <h3 style="color:#4f46e5; font-size:16px; margin-bottom:5px;">4. What if I misjudge how long an assignment will take?</h3>
     <p style="font-size:14px; color:#1e293b; line-height:1.6;">
       No worries. The tool adapts automatically. You can break longer tasks into smaller chunks, adjust times on the fly, and see how changes affect your daily schedule. This makes it easy to stay realistic and avoid overloading yourself.
     </p>
   </div>
-  
+ 
   <div style="margin-bottom:20px;">
     <h3 style="color:#4f46e5; font-size:16px; margin-bottom:5px;">5. Can this planner help me manage my workload without burning out?</h3>
     <p style="font-size:14px; color:#1e293b; line-height:1.6;">
@@ -477,6 +928,26 @@ select {
     </p>
   </div>
 </div>
+<!-- Put this below your FAQ -->
+<div id="preset-section" style="padding: 40px 0; text-align: center;">
+    <hr style="border: 0; height: 1px; background: #eee; margin-bottom: 40px;">
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Your preset buttons will go here next -->
+</div>
+
+
+
 
 <!-- BIBLIOGRAPHY / REFERENCES -->
 <div class="bibliography">
@@ -489,7 +960,19 @@ select {
 </div>
 
 
+
+
+
+
+
+
 </div> <!-- End container -->
+
+
+
+
+
+
 
 
 <script>
@@ -497,15 +980,27 @@ const container = document.getElementById("assignmentsContainer");
 const output = document.getElementById("output");
 const schoolLevel = document.getElementById("schoolLevel");
 
+
+
+
 const subjects = {
   middle:["Math","English","Science","Social Studies","PE/Health","Art/Music","Foreign Language"],
   high:["Math","English","Science","Social Studies","PE/Health","Art/Music","Foreign Language","Electives/Other"],
   college:["Arts & Humanities","STEM","Science","Computer Science","Astronomy","Environmental Science","Engineering","Business/Finance","Social Sciences","Health & Medicine","Education","Communication & Media","Other"]
 };
 
-const attentionBlocks = { middle:60, high:78, college:90 };
+
+
+
+const attentionBlocks = { middle:35, high:50, college:70 };
 const difficultyRank = { priority:0, hard:1, medium:2, easy:3 }; // PRIORITY first
 let TOTAL_STUDY_SECONDS = 0;
+
+
+
+
+
+
 
 
 function minutesToText(mins){
@@ -515,6 +1010,9 @@ function minutesToText(mins){
   if(m===0) return `${h} hours`;
   return `${h} hours ${m} minutes`;
 }
+
+
+
 
 // Add Assignment
 document.getElementById("addAssignmentBtn").onclick = () => {
@@ -545,14 +1043,64 @@ document.getElementById("addAssignmentBtn").onclick = () => {
   div.scrollIntoView({ behavior: 'smooth', block: 'center' });
 };
 
+
+
+
 // Reset
+// Updated Reset Function
 document.getElementById("resetBtn").onclick = () => {
+  // 1. Clear standard elements
   container.innerHTML = "";
   output.innerHTML = "";
   document.getElementById("timelineBar").innerHTML = "";
+ 
   const oldDaysText = document.getElementById("daysText");
   if(oldDaysText) oldDaysText.remove();
+
+
+
+
+  // 2. Remove Timer UI and Displays
+  const timerControls = document.getElementById("timerControls");
+  if (timerControls) timerControls.style.display = "none";
+
+
+
+
+  const countdownDisp = document.getElementById("countdownDisplay");
+  if (countdownDisp) countdownDisp.textContent = "";
+
+
+
+
+  // 3. Remove both potential Playheads from the DOM
+  const playhead1 = document.getElementById("v_playhead");
+  const playhead2 = document.getElementById("v_playhead_fixed");
+  if (playhead1) playhead1.remove();
+  if (playhead2) playhead2.remove();
+
+
+
+
+  // 4. STOP ACTIVE ANIMATIONS
+  // This stops the recursive requestAnimationFrame loops
+  const resetTimerBtn = document.getElementById("resetTimerBtn");
+  if (resetTimerBtn) {
+      resetTimerBtn.click(); // Triggers the stopAndClear() logic in your engine
+  }
+
+
+
+
+  // 5. Reset global state
+  TOTAL_STUDY_SECONDS = 0;
 };
+
+
+
+
+
+
 
 
 // Calculate
@@ -564,11 +1112,20 @@ document.getElementById("calculateBtn").onclick = () => {
   }
 
 
+
+
+
+
+
+
   let assignments = raw.map(a => ({
     subject: a.querySelector(".subject").value,
     minutes: parseInt(a.querySelector(".time").value),
     difficulty: a.querySelector(".difficulty").value
   }));
+
+
+
 
   assignments.sort((a,b)=>{
     if(difficultyRank[a.difficulty] !== difficultyRank[b.difficulty]){
@@ -578,8 +1135,17 @@ document.getElementById("calculateBtn").onclick = () => {
   });
 
 
+
+
+
+
+
+
   const block = attentionBlocks[schoolLevel.value];
   let dailyLimit = schoolLevel.value==="middle"?120: schoolLevel.value==="high"?180:240;
+
+
+
 
   let totalWork = assignments.reduce((s,a)=>s+a.minutes,0);
   let totalBreaks = 0;
@@ -590,11 +1156,23 @@ document.getElementById("calculateBtn").onclick = () => {
   let plan = `<b>Day ${day}:</b>\n\n`;
 
 
+
+
+
+
+
+
   assignments.forEach((a,idx)=>{
     let remaining = a.minutes;
     while(remaining>0){
       let untilBreak = block - (dayCumulative % block);
       let chunk = Math.min(remaining, untilBreak, dailyLimit - dayCumulative);
+
+
+
+
+
+
 
 
       plan += `${a.subject} (${a.difficulty}) — ${minutesToText(chunk)}`;
@@ -603,15 +1181,33 @@ document.getElementById("calculateBtn").onclick = () => {
       remaining -= chunk;
 
 
+
+
+
+
+
+
       if(dayCumulative % block === 0 && dayCumulative + 15 <= dailyLimit && (remaining>0 || idx<assignments.length-1)){
-        plan += ", then a 15-minute break";
-        dayCumulative += 15;
-        cumulativeForTimeline += 15;
-        totalBreaks += 15;
+        plan += ", then a 10-minute break";
+        dayCumulative += 10;
+        cumulativeForTimeline += 10;
+        totalBreaks += 10;
       }
 
 
+
+
+
+
+
+
       if(remaining>0) plan += ", then ";
+
+
+
+
+
+
 
 
       if(dayCumulative >= dailyLimit && (remaining>0 || idx<assignments.length-1)){
@@ -623,27 +1219,30 @@ document.getElementById("calculateBtn").onclick = () => {
     }
     plan += "\n\n";
   });
-  
+ 
 TOTAL_STUDY_SECONDS = (totalWork + totalBreaks) * 60;
 document.getElementById("countdownDisplay").textContent =
   "DEBUG: " + TOTAL_STUDY_SECONDS + " sec";
+
+
+
 
   output.innerHTML =
 `Total Work Time: ${minutesToText(totalWork)}
 Total Break Time: ${minutesToText(totalBreaks)}
 Total Time Required: ${minutesToText(totalWork + totalBreaks)}
 
-
 ${plan}`;
-
   const daysNeeded = Math.ceil(totalWork/dailyLimit);
   const daysText = document.createElement("div");
   daysText.style.fontSize = "18px";
   daysText.style.fontWeight = "bold";
   daysText.style.marginBottom = "8px";
   daysText.style.textAlign = "center";
-  daysText.textContent = `You can finish your work in ${daysNeeded} school day${daysNeeded>1?"s":""}.`;
-  daysText.id = "daysText";
+ 
+
+
+
 
   const oldDaysText = document.getElementById("daysText");
   if(oldDaysText) oldDaysText.remove();
@@ -651,17 +1250,41 @@ ${plan}`;
   timelineContainer.parentNode.insertBefore(daysText, timelineContainer);
 
 
+
+
+
+
+
+
   renderTimeline(assignments, block, dayBoundaries, cumulativeForTimeline, dailyLimit);
 // ... (existing calculation code above)
 
 
+
+
+
+
+
+
   renderTimeline(assignments, block, dayBoundaries, cumulativeForTimeline, dailyLimit);
+
+
+
+
+
+
+
+
+
 
 
 
   // ADD THIS LINE BELOW:
   output.scrollIntoView({ behavior: 'smooth', block: 'start' });
 };
+
+
+
 
 // Timeline with day markers and breaks (fixed break placement)
 function renderTimeline(assignments, block, dayBoundaries, totalTime, dailyLimit){
@@ -671,11 +1294,23 @@ function renderTimeline(assignments, block, dayBoundaries, totalTime, dailyLimit
   const colors = { priority:"#800080", hard:"#d9534f", medium:"#f0ad4e", easy:"#5cb85c", break:"#999" };
 
 
+
+
+
+
+
+
   assignments.forEach((a,idx)=>{
     let remaining = a.minutes;
     while(remaining>0){
       let untilBreak = block - (dayCumulative % block);
       let chunk = Math.min(remaining, untilBreak, dailyLimit - dayCumulative);
+
+
+
+
+
+
 
 
       const seg = document.createElement("div");
@@ -684,16 +1319,31 @@ function renderTimeline(assignments, block, dayBoundaries, totalTime, dailyLimit
       bar.appendChild(seg);
 
 
+
+
+
+
+
+
       dayCumulative += chunk;
       remaining -= chunk;
 
+
+
+
       if(dayCumulative % block === 0 && dayCumulative + 15 <= dailyLimit && (remaining>0 || idx<assignments.length-1)){
         const breakSeg = document.createElement("div");
-        breakSeg.style.flex = 15;
+        breakSeg.style.flex = 10;
         breakSeg.style.background = colors.break;
         bar.appendChild(breakSeg);
-        dayCumulative += 15;
+        dayCumulative += 10;
       }
+
+
+
+
+
+
 
 
       if(dayCumulative >= dailyLimit){
@@ -701,12 +1351,15 @@ function renderTimeline(assignments, block, dayBoundaries, totalTime, dailyLimit
       }
     }
   });
-  
+ 
   dayBoundaries.forEach((db,i)=>{
     const marker = document.createElement("div");
     marker.className = "dayMarker";
     marker.style.left = `${(db/totalTime)*100}%`;
     bar.appendChild(marker);
+
+
+
 
     const label = document.createElement("div");
     label.className = "dayLabel";
@@ -717,13 +1370,25 @@ function renderTimeline(assignments, block, dayBoundaries, totalTime, dailyLimit
 }
 
 
+
+
+
+
+
+
 /* --- ROBUST 2026 TIMER ENGINE --- */
 (function() {
     const bar = document.getElementById("timelineBar");
     if (!bar) return;
 
+
+
+
     // 1. Force the timeline bar to be the "anchor" for the vertical line
     bar.style.position = "relative";
+
+
+
 
     // 2. Create the Red Vertical Bar (Playhead)
     let playhead = document.getElementById("v_playhead");
@@ -732,12 +1397,15 @@ function renderTimeline(assignments, block, dayBoundaries, totalTime, dailyLimit
         playhead.id = "v_playhead";
         // This styling ensures it cuts vertically through the entire timeline bar
         playhead.style.cssText = `
-            position: absolute; top: 0; left: 0; width: 4px; height: 100%; 
-            background: #ef4444; z-index: 999; display: none; 
+            position: absolute; top: 0; left: 0; width: 4px; height: 100%;
+            background: #ef4444; z-index: 999; display: none;
             pointer-events: none; box-shadow: 0 0 10px rgba(239, 68, 68, 0.8);
         `;
         bar.appendChild(playhead);
     }
+
+
+
 
     // 3. Ensure Timer Controls Container exists
     let controls = document.getElementById("timerControls");
@@ -752,8 +1420,14 @@ function renderTimeline(assignments, block, dayBoundaries, totalTime, dailyLimit
         document.getElementById("timelineContainer").insertBefore(controls, bar);
     }
 
+
+
+
     let timerRaf;
     let startTime;
+
+
+
 
     const stopAndClear = () => {
         cancelAnimationFrame(timerRaf);
@@ -762,6 +1436,9 @@ function renderTimeline(assignments, block, dayBoundaries, totalTime, dailyLimit
         playhead.style.left = "0%";
         document.getElementById("countdownDisplay").textContent = "00:00:00";
     };
+
+
+
 
     // 4. Hook into the existing Calculate button to show the timer
     const calcBtn = document.getElementById("calculateBtn");
@@ -772,7 +1449,13 @@ function renderTimeline(assignments, block, dayBoundaries, totalTime, dailyLimit
         stopAndClear();
     };
 
+
+
+
     document.getElementById("resetTimerBtn").onclick = stopAndClear;
+
+
+
 
 document.getElementById("startTimerBtn").onclick = function () {
   if (TOTAL_STUDY_SECONDS <= 0) {
@@ -780,28 +1463,52 @@ document.getElementById("startTimerBtn").onclick = function () {
     return;
   }
 
+
+
+
   stopAndClear();
+
+
+
 
   const countdown = document.getElementById("countdownDisplay");
   playhead.style.display = "block";
 
+
+
+
   const startTime = performance.now();
+
+
+
 
   function frame(now) {
     const elapsed = Math.floor((now - startTime) / 1000);
     const remaining = Math.max(0, TOTAL_STUDY_SECONDS - elapsed);
 
+
+
+
     const h = Math.floor(remaining / 3600);
     const m = Math.floor((remaining % 3600) / 60);
     const s = remaining % 60;
+
+
+
 
     countdown.textContent =
       `${h.toString().padStart(2, "0")}:` +
       `${m.toString().padStart(2, "0")}:` +
       `${s.toString().padStart(2, "0")}`;
 
+
+
+
     const progress = (elapsed / TOTAL_STUDY_SECONDS) * 100;
     playhead.style.left = Math.min(progress, 100) + "%";
+
+
+
 
     if (remaining > 0) {
       timerRaf = requestAnimationFrame(frame);
@@ -811,11 +1518,23 @@ document.getElementById("startTimerBtn").onclick = function () {
     }
   }
 
+
+
+
   timerRaf = requestAnimationFrame(frame);
 };
 
 
+
+
+
+
+
+
 })();
+
+
+
 
 /* --- 2026 KEYBOARD-ENABLED TIMER ENGINE --- */
 (function() {
@@ -823,10 +1542,16 @@ document.getElementById("startTimerBtn").onclick = function () {
     const output = document.getElementById("output");
     if (!bar || !output) return;
 
+
+
+
     // 1. Setup global state
     let timerId = null;
     let startTime = 0;
     let playhead = null;
+
+
+
 
     // 2. The Re-Injection Logic (Ensures bar exists even after Calculate clears it)
     const ensurePlayhead = () => {
@@ -836,15 +1561,18 @@ document.getElementById("startTimerBtn").onclick = function () {
             playhead = document.createElement("div");
             playhead.id = "v_playhead_fixed";
             playhead.style.cssText = `
-                position: absolute !important; top: -5px !important; left: 0; 
-                width: 4px; height: calc(100% + 10px); background: #ef4444; 
-                z-index: 9999; display: none; pointer-events: none; 
+                position: absolute !important; top: -5px !important; left: 0;
+                width: 4px; height: calc(100% + 10px); background: #990000;
+                z-index: 9999; display: none; pointer-events: none;
                 box-shadow: 0 0 10px rgba(239, 68, 68, 0.8);
             `;
             bar.style.position = "relative";
             bar.appendChild(playhead);
         }
     };
+
+
+
 
 const stopTimer = () => {
     cancelAnimationFrame(timerId);
@@ -858,22 +1586,37 @@ const stopTimer = () => {
     if (countdown) countdown.textContent = "00:00:00";
 };
 
+
+
+
 const startTimer = () => {
     if (TOTAL_STUDY_SECONDS <= 0) {
         alert("Please click Calculate first.");
         return;
     }
 
+
+
+
     stopTimer();       // stops any previous timer
     ensurePlayhead();  // make sure playhead exists
     playhead.style.display = "block";
 
+
+
+
     const startTime = performance.now();
     const countdown = document.getElementById("countdownDisplay");
+
+
+
 
     function frame(now) {
         const elapsed = Math.floor((now - startTime) / 1000);
         const remaining = Math.max(0, TOTAL_STUDY_SECONDS - elapsed);
+
+
+
 
         // Update the HH:MM:SS display
         const h = Math.floor(remaining / 3600);
@@ -884,9 +1627,15 @@ const startTimer = () => {
             `${m.toString().padStart(2,"0")}:` +
             `${s.toString().padStart(2,"0")}`;
 
+
+
+
         // Move playhead
         const progress = (elapsed / TOTAL_STUDY_SECONDS) * 100;
         playhead.style.left = Math.min(progress, 100) + "%";
+
+
+
 
         if (remaining > 0) {
             timerId = requestAnimationFrame(frame);
@@ -896,8 +1645,14 @@ const startTimer = () => {
         }
     }
 
+
+
+
     timerId = requestAnimationFrame(frame);
 };
+
+
+
 
     // 3. Add Keyboard Listeners (Spacebar to Start, 'R' to Reset)
     window.addEventListener("keydown", (e) => {
@@ -910,16 +1665,25 @@ const startTimer = () => {
         }
     });
 
+
+
+
     // 4. Manual Button Listeners
     const startBtn = document.getElementById("startTimerBtn");
     const resetBtn = document.getElementById("resetTimerBtn");
     if (startBtn) startBtn.onclick = startTimer;
     if (resetBtn) resetBtn.onclick = stopTimer;
 
+
+
+
     // 5. Reset timer whenever "Calculate" is clicked
 
 
 })();
+
+
+
 
 /* --- DAY-END PAUSE LOGIC --- */
 (function() {
@@ -933,42 +1697,56 @@ const startTimer = () => {
   </div>`;
   document.body.appendChild(overlay);
 
+
+
+
   let isPausedForDay = false;
   const continueBtn = document.getElementById("continueBtn");
 
+
+
+
   // 2. Monitor progress for Day Markers
   const originalStart = document.getElementById("startTimerBtn").onclick;
-  
+ 
   const checkDayEnd = () => {
     const playhead = document.getElementById("v_playhead_fixed") || document.getElementById("timerPlayhead_v2");
     if (!playhead || playhead.style.display === "none" || isPausedForDay) return;
 
+
+
+
     const playheadRect = playhead.getBoundingClientRect();
-    
+   
     // Detect Day Marker (the black vertical lines)
     const marker = document.elementsFromPoint(playheadRect.left, playheadRect.top)
       .find(el => el.className === "dayMarker");
 
+
+
+
     if (marker && !marker.dataset.passed) {
       isPausedForDay = true;
       marker.dataset.passed = "true"; // Prevent double-triggering
-      
+     
       // Stop the timer
       const resetBtn = document.getElementById("resetTimerBtn");
       const startBtn = document.getElementById("startTimerBtn");
-      
+     
       // Pause visual playhead by stopping the animation frame
       // We trigger the continue button to resume
       overlay.style.display = "flex";
     }
   };
-
   continueBtn.onclick = () => {
     overlay.style.display = "none";
     isPausedForDay = false;
-    // The playhead will resume naturally in the next animation frame 
+    // The playhead will resume naturally in the next animation frame
     // because the 'step' function in your timer logic checks current time
   };
+
+
+
 
   // Run the check inside the global animation loop
   const monitorLoop = () => {
@@ -979,13 +1757,271 @@ const startTimer = () => {
 })();
 
 
+
+
+document.getElementById("btnDark").onclick = () => {
+    document.documentElement.classList.add("dark-theme");
+};
+
+
+
+
+document.getElementById("btnLight").onclick = () => {
+    document.documentElement.classList.remove("dark-theme");
+};
+function scrollToPresets() {
+    const target = document.getElementById("preset-section");
+    if (target) {
+        target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    }
+}
+
+/* --- COMPLETE 2026 PRESET PLAN ENGINE --- */
+(function() {
+    // 1. Core Functions (Shared by all presets)
+    window.addPresetTask = function(subj, timeVal, diffVal) {
+        document.getElementById("addAssignmentBtn").click(); 
+        const rows = document.querySelectorAll(".assignment");
+        const lastRow = rows[rows.length - 1];
+        if (lastRow) {
+            lastRow.querySelector(".subject").value = subj;
+            lastRow.querySelector(".time").value = timeVal;
+            lastRow.querySelector(".difficulty").value = diffVal;
+        }
+    };
+
+    window.finalizePreset = function() {
+        document.getElementById("calculateBtn").click();
+        document.getElementById("output").scrollIntoView({ behavior: 'smooth', block: 'start' });
+    };
+
+    // 2. Middle School Presets
+    window.applyMSFinalExams = function() {
+        document.getElementById("resetBtn").click();
+        document.getElementById("schoolLevel").value = "middle";
+        ["Math", "English", "Science", "Social Studies", "PE/Health", "Art/Music", "Foreign Language"].forEach(s => addPresetTask(s, "60", "priority"));
+        finalizePreset();
+    };
+
+    window.applyMSHomeworkDay = function() {
+        document.getElementById("resetBtn").click();
+        document.getElementById("schoolLevel").value = "middle";
+        ["Math", "English", "Science", "Social Studies"].forEach(s => addPresetTask(s, "30", "medium"));
+        ["PE/Health", "Art/Music", "Foreign Language"].forEach(s => addPresetTask(s, "10", "easy"));
+        finalizePreset();
+    };
+
+    // 3. High School Presets (The requested additions)
+    window.applyHSFinalsPlan = function() {
+        document.getElementById("resetBtn").click();
+        document.getElementById("schoolLevel").value = "high";
+        // 2-Hour Priority Core
+        ["Math", "Science", "Social Studies"].forEach(s => addPresetTask(s, "120", "priority"));
+        // 1-Hour Priority Others
+        ["English", "PE/Health", "Art/Music", "Foreign Language", "Electives/Other"].forEach(s => addPresetTask(s, "60", "priority"));
+        finalizePreset();
+    };
+
+    window.applyHSHomeworkWeek = function() {
+        document.getElementById("resetBtn").click();
+        document.getElementById("schoolLevel").value = "high";
+        // 1-Hour Specifics
+        addPresetTask("Math", "60", "hard");
+        addPresetTask("Social Studies", "60", "hard");
+        addPresetTask("Science", "60", "medium");
+        addPresetTask("English", "60", "easy");
+        // 30-Min Easy
+        ["PE/Health", "Art/Music", "Electives/Other"].forEach(s => addPresetTask(s, "30", "easy"));
+        finalizePreset();
+    };
+
+    // 4. College Presets
+    window.applyCollegeMidterms = function() {
+        document.getElementById("resetBtn").click();
+        document.getElementById("schoolLevel").value = "college";
+        addPresetTask("STEM", "180", "priority");
+        addPresetTask("Science", "180", "priority");
+        addPresetTask("Other", "120", "hard");
+        finalizePreset();
+    };
+
+    // 5. Build and Inject UI
+    function buildPresetUI() {
+        let section = document.getElementById("preset-section");
+        if (!section) {
+            section = document.createElement("div");
+            section.id = "preset-section";
+            const bib = document.querySelector(".bibliography");
+            if (bib) bib.before(section);
+            else document.querySelector(".container").appendChild(section);
+        }
+
+        section.innerHTML = `
+            <div class="preset-col">
+                <h3>Middle School</h3>
+                <button class="preset-btn" onclick="applyMSFinalExams()">Final Exams Plan</button>
+                <button class="preset-btn" onclick="applyMSHomeworkDay()">Homework Week Plan</button>
+            </div>
+            <div class="preset-col">
+                <h3>High School</h3>
+                <button class="preset-btn" onclick="applyHSFinalsPlan()">Final Exams Plan</button>
+                <button class="preset-btn" onclick="applyHSHomeworkWeek()">Homework Week Plan</button>
+            </div>
+            <div class="preset-col">
+                <h3>College</h3>
+                <button class="preset-btn" onclick="applyCollegeMidterms()">Midterm Week Plan</button>
+            </div>
+        `;
+    }
+
+    if (document.readyState === "complete" || document.readyState === "interactive") buildPresetUI();
+    else document.addEventListener("DOMContentLoaded", buildPresetUI);
+})();
+
+/* --- 2026 PERSISTENCE ENGINE (LOCAL STORAGE) --- */
+
+// 1. Function to Save all current assignments
+window.saveToLocalStorage = function() {
+    const assignments = [];
+    const rows = document.querySelectorAll(".assignment");
+    
+    rows.forEach(row => {
+        assignments.push({
+            subject: row.querySelector(".subject").value,
+            time: row.querySelector(".time").value,
+            difficulty: row.querySelector(".difficulty").value
+        });
+    });
+
+    // Save the list and the selected school level
+    localStorage.setItem("studyPlanner_tasks", JSON.stringify(assignments));
+    localStorage.setItem("studyPlanner_level", document.getElementById("schoolLevel").value);
+    console.log("Progress saved to browser memory.");
+};
+
+// 2. Function to Load assignments on startup
+window.loadFromLocalStorage = function() {
+    const savedTasks = localStorage.getItem("studyPlanner_tasks");
+    const savedLevel = localStorage.getItem("studyPlanner_level");
+
+    if (savedLevel) {
+        document.getElementById("schoolLevel").value = savedLevel;
+    }
+
+    if (savedTasks) {
+        const tasks = JSON.parse(savedTasks);
+        if (tasks.length > 0) {
+            // Clear current container before loading
+            document.getElementById("assignmentsContainer").innerHTML = "";
+            
+            tasks.forEach(task => {
+                addPresetTask(task.subject, task.time, task.difficulty);
+            });
+            
+            // Auto-calculate to show the timeline immediately
+            document.getElementById("calculateBtn").click();
+        }
+    }
+};
+
+// 3. Attach "Save" triggers to existing buttons
+// We add an event listener so we don't overwrite your existing onclick functions
+document.getElementById("calculateBtn").addEventListener("click", saveToLocalStorage);
+document.getElementById("addAssignmentBtn").addEventListener("click", saveToLocalStorage);
+document.getElementById("resetBtn").addEventListener("click", () => {
+    localStorage.removeItem("studyPlanner_tasks");
+});
+
+// 4. Initialize Load on page start
+if (document.readyState === "complete" || document.readyState === "interactive") {
+    loadFromLocalStorage();
+} else {
+    document.addEventListener("DOMContentLoaded", loadFromLocalStorage);
+}
+document.addEventListener("DOMContentLoaded", function() {
+    // 1. Headers: Floating Rise with Blur
+    document.querySelectorAll('h1, h2').forEach(el => el.classList.add('scroll-animate', 'float-rise-blur'));
+
+    // 2. MIT Method & FAQ: Clean Floating Rise (No Blur = No Dark Mode issues)
+    document.querySelectorAll('.mitMethod, .faq').forEach(el => el.classList.add('scroll-animate', 'float-rise-clean'));
+
+    // 3. Add Assignment Button & Start Timer: Appear from Left
+    const leftBtns = ['addAssignmentBtn', 'startTimer'];
+    leftBtns.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.classList.add('scroll-animate', 'app-left');
+    });
+
+    // 4. Calculate, Reset, and Reset Timer: Appear from Right
+    const rightBtns = ['calculateBtn', 'resetBtn', 'resetTimer'];
+    rightBtns.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.classList.add('scroll-animate', 'app-right');
+    });
+
+    // 5. Assignment Cards: Explicitly ensuring they DO animate
+document.querySelectorAll('.assignment').forEach((el, index) => {
+    // Add the animation classes (e.g., 'scroll-animate' and a specific effect)
+    el.classList.add('scroll-animate', 'app-up');
+    
+    // Clear the static overrides so CSS animations can run
+    el.style.animation = '';
+    el.style.opacity = '';
+    el.style.transform = '';
+
+    // Optional: Stagger the animations based on their index
+    el.style.animationDelay = `${index * 0.1}s`;
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    // 1. Target the Preset Columns specifically
+    const presetCols = document.querySelectorAll('.preset-col');
+    
+    if (presetCols.length >= 3) {
+        // Middle School (1st): Appear from Left
+        presetCols[0].classList.add('scroll-animate', 'app-left');
+        
+        // High School (2nd): Appear from Below
+        presetCols[1].classList.add('scroll-animate', 'app-up');
+        
+        // College (3rd): Appear from Right
+        presetCols[2].classList.add('scroll-animate', 'app-right');
+    }
+
+    // 2. Ensure the MIT and FAQ boxes still use the "Clean" rise to protect Dark Mode
+    document.querySelectorAll('.mitMethod, .faq').forEach(el => {
+        el.classList.add('scroll-animate', 'float-rise-clean');
+    });
+
+    // 3. Keep Headers, Buttons and Timer settings as previously configured
+    document.querySelectorAll('h1, h2').forEach(el => el.classList.add('scroll-animate', 'float-rise-blur'));
+    
+    const leftBtns = ['addAssignmentBtn', 'startTimer'];
+    leftBtns.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.classList.add('scroll-animate', 'app-left');
+    });
+
+    const rightBtns = ['calculateBtn', 'resetBtn', 'resetTimer'];
+    rightBtns.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.classList.add('scroll-animate', 'app-right');
+    });
+});
+
 </script>
-
-
-
 </body>
-
 </html>
+
+
+
+
+
+
 
 
 
