@@ -3875,7 +3875,7 @@ document.addEventListener("visibilitychange", () => {
   const cd = document.getElementById("countdownDisplay").textContent.split(":");
   if (cd.length !== 3) return;
   const rem = parseInt(cd[0]) * 3600 + parseInt(cd[1]) * 60 + parseInt(cd[2]);
-  if (rem > 0) saveTimerState(rem, timerId !== null);
+  if (rem > 0) saveTimerState(rem, false);
 });
 window.addEventListener("pagehide", () => {
   const ph = document.getElementById("v_playhead_fixed");
