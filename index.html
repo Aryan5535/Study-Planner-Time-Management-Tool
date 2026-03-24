@@ -3876,11 +3876,6 @@ document.addEventListener("visibilitychange", () => {
   if (cd.length !== 3) return;
   const rem = parseInt(cd[0]) * 3600 + parseInt(cd[1]) * 60 + parseInt(cd[2]);
   if (rem > 0) saveTimerState(rem, timerId !== null);
-  if (timerId !== null) {
-    document.getElementById("PauseTimerBtn").click();
-    document.getElementById("PauseTimerBtn").style.display = "none";
-    document.getElementById("ResumeTimerBtn").style.display = "block";
-  }
 });
 window.addEventListener("pagehide", () => {
   const ph = document.getElementById("v_playhead_fixed");
